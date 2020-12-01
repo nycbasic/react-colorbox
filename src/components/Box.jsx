@@ -1,16 +1,15 @@
 import React from 'react';
 
 const Box = ({colorBox}) => {
-    console.log(colorBox)
     return colorBox.map(box => {
        const {width, height, color} = box;
         const boxStyle = {
-            width,
-            height,
-            color
+            width: parseInt(width),
+            height: parseInt(height),
+            backgroundColor: color
         }
-        console.log(boxStyle)
-        return <div style={boxStyle}></div>
+        console.group(box)
+    return <div style={boxStyle}></div>
     })
 }
  

@@ -9,7 +9,7 @@ class BoxList extends Component {
 		this.state = {
 			width: 0,
 			height: 0,
-			color: '#0000',
+			color: 'rgb(0,0,0)',
 			colorBox: [],
 		};
 
@@ -31,7 +31,7 @@ class BoxList extends Component {
             return {
 				width: 0,
 				height: 0,
-				color: '#0000',
+				color: 'rgb(0,0,0)',
                 colorBox: [...prevState.colorBox, item]
             }
         })

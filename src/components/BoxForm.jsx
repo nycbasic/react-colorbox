@@ -12,7 +12,7 @@ const BoxForm = ({width, height, color, handleChange, handleSubmit}) => {
             <input type="number" name="height" value={height} onChange={handleChange}/>
             <br/>
             <br/>
-            <label htmlFor="color">Hex Color: </label>
+            <label htmlFor="color">Color: </label>
             <input type="color" name="color" value={color} onChange={handleChange}/>
             <br />
             <br />
