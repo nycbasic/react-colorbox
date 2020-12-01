@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BoxForm from './BoxForm';
-import Box from './Box'
+import Box from './Box';
 
 class BoxList extends Component {
 	constructor(props) {
@@ -21,27 +21,33 @@ class BoxList extends Component {
 		this.setState({
 			[e.target.name]: e.target.value,
 		});
-    }
-    
-    handleSubmit(e) {
+	}
+
+	handleSubmit(e) {
 		e.preventDefault();
-		const {width, height, color} = this.state;
-		let item = {width, height, color};
-        this.setState(prevState => {
-            return {
+		const { width, height, color } = this.state;
+		let item = { width, height, color };
+		this.setState((prevState) => {
+			return {
 				width: 0,
 				height: 0,
 				color: 'rgb(0,0,0)',
-                colorBox: [...prevState.colorBox, item]
-            }
-        })
-    }
+				colorBox: [...prevState.colorBox, item],
+			};
+		});
+	}
 
 	render() {
+		const { colorBox } = this.state;
+		const { handleChange, handleSubmit } = this;
 		return (
 			<React.Fragment>
-				<BoxForm {...this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-				<Box colorBox={this.state.colorBox}/>
+				<BoxForm
+					{...this.state}
+					handleChange={handleChange}
+					handleSubmit={handleSubmit}
+				/>
+				<Box colorBox={colorBox} />
 			</React.Fragment>
 		);
 	}
