@@ -8,7 +8,6 @@ const Box = ({colorBox}) => {
             height: parseInt(height),
             backgroundColor: color
         }
-        console.group(box)
     return <div style={boxStyle}></div>
     })
 }

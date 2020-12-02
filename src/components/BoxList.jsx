@@ -7,8 +7,8 @@ class BoxList extends Component {
 		super(props);
 
 		this.state = {
-			width: 0,
-			height: 0,
+			width: "",
+			height: "",
 			color: 'rgb(0,0,0)',
 			colorBox: [],
 		};
