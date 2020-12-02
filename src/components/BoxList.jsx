@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavBar from "./Navbar";
 import BoxForm from './BoxForm';
 import Box from './Box';
 
@@ -29,8 +30,8 @@ class BoxList extends Component {
 		let item = { width, height, color };
 		this.setState((prevState) => {
 			return {
-				width: 0,
-				height: 0,
+				width: "",
+				height: "",
 				color: 'rgb(0,0,0)',
 				colorBox: [...prevState.colorBox, item],
 			};
@@ -42,6 +43,7 @@ class BoxList extends Component {
 		const { handleChange, handleSubmit } = this;
 		return (
 			<React.Fragment>
+				<NavBar />
 				<BoxForm
 					{...this.state}
 					handleChange={handleChange}

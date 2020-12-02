@@ -1,15 +1,23 @@
 import React from 'react';
+import { TextField } from '@material-ui/core';
+
 
 const BoxForm = ({ width, height, color, handleChange, handleSubmit }) => {
-    console.log(width)
+	console.log(width);
 	return (
 		<form onSubmit={handleSubmit}>
 			<h1>Enter The Box Data</h1>
-			<label htmlFor='width'>Width: </label>
-			<input type='number' name='width' value={width} onChange={handleChange} />
+			<TextField
+				label='Width'
+				type='number'
+				name='width'
+				size='small'
+				value={width}
+				onChange={handleChange}
+			/>
 			<br />
-			<label htmlFor='height'>Height: </label>
-			<input
+			<TextField
+				label='Height'
 				type='number'
 				name='height'
 				value={height}
@@ -17,11 +25,19 @@ const BoxForm = ({ width, height, color, handleChange, handleSubmit }) => {
 			/>
 			<br />
 			<br />
-			<label htmlFor='color'>Color: </label>
-			<input type='color' name='color' value={color} onChange={handleChange} />
+			<input
+				width='500'
+				type='color'
+				name='color'
+				value={color}
+				onChange={handleChange}
+			/>
 			<br />
 			<br />
-			<button type="submit" disabled={(width && height) === "" || (width && height) === "0"}>
+			<button
+				type='submit'
+				disabled={(width && height) === '' || (width && height) === '0'}
+			>
 				Add Box
 			</button>
 		</form>
