@@ -1,12 +1,12 @@
 import React from 'react';
-import { TextField } from '@material-ui/core';
-
+import { TextField, Typography, Button } from '@material-ui/core';
 
 const BoxForm = ({ width, height, color, handleChange, handleSubmit }) => {
 	console.log(width);
 	return (
 		<form onSubmit={handleSubmit}>
-			<h1>Enter The Box Data</h1>
+			<br />
+			<Typography variant='h5'>Enter Color Box Data</Typography>
 			<TextField
 				label='Width'
 				type='number'
@@ -34,12 +34,14 @@ const BoxForm = ({ width, height, color, handleChange, handleSubmit }) => {
 			/>
 			<br />
 			<br />
-			<button
+			<Button
+				color='primary'
+				variant='contained'
 				type='submit'
 				disabled={(width && height) === '' || (width && height) === '0'}
 			>
 				Add Box
-			</button>
+			</Button>
 		</form>
 	);
 };

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import NavBar from "./Navbar";
+import { Grid } from '@material-ui/core';
+import NavBar from './Navbar';
 import BoxForm from './BoxForm';
 import Box from './Box';
 
@@ -8,8 +9,8 @@ class BoxList extends Component {
 		super(props);
 
 		this.state = {
-			width: "",
-			height: "",
+			width: '',
+			height: '',
 			color: 'rgb(0,0,0)',
 			colorBox: [],
 		};
@@ -30,8 +31,8 @@ class BoxList extends Component {
 		let item = { width, height, color };
 		this.setState((prevState) => {
 			return {
-				width: "",
-				height: "",
+				width: '',
+				height: '',
 				color: 'rgb(0,0,0)',
 				colorBox: [...prevState.colorBox, item],
 			};
@@ -49,7 +50,10 @@ class BoxList extends Component {
 					handleChange={handleChange}
 					handleSubmit={handleSubmit}
 				/>
-				<Box colorBox={colorBox} />
+				<br />
+				<Grid container justify="center">
+					<Box colorBox={colorBox} />
+				</Grid>
 			</React.Fragment>
 		);
 	}

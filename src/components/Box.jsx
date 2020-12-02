@@ -1,14 +1,15 @@
 import React from 'react';
+import {Paper} from "@material-ui/core";
 
 const Box = ({colorBox}) => {
-    return colorBox.map(box => {
+    return colorBox.map((box, i) => {
        const {width, height, color} = box;
         const boxStyle = {
             width: parseInt(width),
             height: parseInt(height),
             backgroundColor: color
         }
-    return <div style={boxStyle}></div>
+    return <Paper item key={i} style={boxStyle}></Paper>
     })
 }
  

@@ -5,7 +5,7 @@ const NavBar = (props) => {
 	return (
 		<AppBar position='static'>
 			<Toolbar>
-				<Typography variant='h6'>Color Box Maker</Typography>
+				<Typography variant="h6">Color Box Maker</Typography>
 			</Toolbar>
 		</AppBar>
 	);
